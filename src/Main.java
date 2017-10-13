@@ -1,4 +1,23 @@
-import java.util.List;
+
+ 
+private static boolean checkNoSpinThrow(List<DiceValue> cdv) {
+ 	    boolean success = false;
+ 	    for (int i = 0; i <cdv.size(); i++){
+ 	        if(cdv.get(i).toString().equals("Anchor") ||
+                     cdv.get(i).toString().equals("Crown") ||
+                     cdv.get(i).toString().equals("Heart") ||
+                     cdv.get(i).toString().equals("Diamond") ||
+                    cdv.get(i).toString().equals("Club") ||
+                     cdv.get(i).toString().equals("Spade")){
+ 	            success = true;
+             }
+            else success = true;
+             if(!success) {
+                return false;
+            }
+        }
+ 	    return true;
+  }import java.util.List;
 import java.io.*;
 
 public class Main {
