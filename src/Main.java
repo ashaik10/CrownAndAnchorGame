@@ -87,6 +87,8 @@ public class Main {
                     
                 } //while
 
+             // issue 08 fixation 
+            // balance update 
                 System.out.print(String.format("%d turns later.\nEnd Game %d: ", turn, i));
                 System.out.println(String.format("%s now has balance %d\n", player.getName(), player.getBalance()));
                 
@@ -98,6 +100,7 @@ public class Main {
 
             String ans = console.readLine();
             if (ans.equals("q")) break;
+       
         } //while true
         
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
