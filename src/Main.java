@@ -59,3 +59,25 @@ public class Main {
 
 
 
+while (true)
+        {
+            int winCount = 0;
+            int loseCount = 0;
+            
+            // Issue 03 fixation 
+            // Start game counter starts from 1 
+            for (int i = 1; i < 100; i++)
+            {
+                String name = "Fred";
+                int balance = 100;
+                int limit = 0;
+                player = new Player(name, balance);
+                player.setLimit(limit);
+                int bet = 5;
+                System.out.println(String.format("Start Game %d: ", i));
+                System.out.println(String.format("%s starts with balance %d, limit %d",
+                		player.getName(), player.getBalance(), player.getLimit()));
+                int turn = 0;
+
+                while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
+                {
