@@ -81,3 +81,12 @@ while (true)
 
                 while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
                 {
+
+                    cdv = game.getDiceValues();
+                    if(checkNoSpinThrow(cdv)){
+                        turn++;
+                        DiceValue pick = DiceValue.getRandom();
+                   // Bug 04 fixation 
+					  // minium and max values 
+                        System.out.println("Mimimum wage is $5");
+                        System.out.println("Mimimum wage is $200");
