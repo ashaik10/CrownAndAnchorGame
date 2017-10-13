@@ -49,7 +49,11 @@ public class Main {
                 System.out.println(String.format("%s starts with balance %d, limit %d",
                 		player.getName(), player.getBalance(), player.getLimit()));
                 int turn = 0;
-                while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
+               
+					+				// issue 07 fixation 
+ +				//Player cannot  make bet will minimum balance.
+ +				//Player cannot  make bet will minimum balance.
+ +			  while (player.balanceExceedsLimitBy(bet) && player.getBalance() < 200)
                 {
 
                     cdv = game.getDiceValues();
