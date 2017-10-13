@@ -109,4 +109,26 @@ while (true)
                 System.out.print(String.format("%d turns later.\nEnd Game %d: ", turn, i));
                 System.out.println(String.format("%s now has balance %d\n", player.getName(), player.getBalance()));
                 
+            }// Bug 07 fixation roll over with no spin 
+    private static boolean checkNoSpinThrow(List<DiceValue> cdv) {
+	    boolean success = false;
+	    for (int i = 0; i <cdv.size(); i++){
+	        if(cdv.get(i).toString().equals("Anchor") ||
+                    cdv.get(i).toString().equals("Crown") ||
+                    cdv.get(i).toString().equals("Heart") ||
+                    cdv.get(i).toString().equals("Diamond") ||
+                    cdv.get(i).toString().equals("Club") ||
+                    cdv.get(i).toString().equals("Spade")){
+	            success = true;
             }
+            else success = true;
+            if(!success) {
+                return false;
+            }
+        }
+	    return true;
+    }
+
+
+}
+
