@@ -109,6 +109,12 @@ public class Main {
         
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
 	}
+// Issue 06 Fixation 
+		
+        
+        System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
+	}
+
 // Bug 01 fixation roll over with no spin 
     private static boolean checkNoSpinThrow(List<DiceValue> cdv) {
 	    boolean success = false;
