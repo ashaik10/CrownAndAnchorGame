@@ -78,6 +78,22 @@ public class Main {
         } //while true
         
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
-	}
-
-}
+ //Bug 01 fixation roll over with no spin 
+    private static boolean checkNoSpinThrow(List<DiceValue> cdv) {
+	    boolean success = false;
+	    for (int i = 0; i <cdv.size(); i++){
+	        if(cdv.get(i).toString().equals("Anchor") ||
+                    cdv.get(i).toString().equals("Crown") ||
+                    cdv.get(i).toString().equals("Heart") ||
+                    cdv.get(i).toString().equals("Diamond") ||
+                    cdv.get(i).toString().equals("Club") ||
+                    cdv.get(i).toString().equals("Spade")){
+	            success = true;
+            }
+            else success = true;
+            if(!success) {
+                return false;
+            }
+        }
+	    return true;
+    }
