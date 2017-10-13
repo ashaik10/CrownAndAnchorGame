@@ -1,26 +1,5 @@
 
- 
-private static boolean checkNoSpinThrow(List<DiceValue> cdv) {
- 	    boolean success = false;
- 	    for (int i = 0; i <cdv.size(); i++){
- 	        if(cdv.get(i).toString().equals("Anchor") ||
-                     cdv.get(i).toString().equals("Crown") ||
-                     cdv.get(i).toString().equals("Heart") ||
-                     cdv.get(i).toString().equals("Diamond") ||
-                    cdv.get(i).toString().equals("Club") ||
-                     cdv.get(i).toString().equals("Spade")){
- 	            success = true;
-             }
-            else success = true;
-             if(!success) {
-                return false;
-            }
-        }
- 	    return true;
-  }import java.util.List;
-import java.io.*;
-
-public class Main {
+ public class Main {
 	
 	public static void main(String[] args) throws Exception {
 		
@@ -118,9 +97,16 @@ while (true)
             System.out.println(String.format("Win count = %d, Lose Count = %d, %.2f", winCount, loseCount, (float) winCount/(winCount+loseCount)));
             totalWins += winCount;
             totalLosses += loseCount;
+
             String ans = console.readLine();
             if (ans.equals("q")) break;
         } //while true
  
         System.out.println(String.format("Overall win rate = %.1f%%", (float)(totalWins * 100) / (totalWins + totalLosses)));
 	}
+ // issue 08 fixation 
+ // balance update 
+                System.out.print(String.format("%d turns later.\nEnd Game %d: ", turn, i));
+                System.out.println(String.format("%s now has balance %d\n", player.getName(), player.getBalance()));
+                
+            }
