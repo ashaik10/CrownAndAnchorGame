@@ -62,17 +62,27 @@ public class Main {
                         System.out.println("Mimimum wage is $200");
                         System.out.printf("Turn %d: %s bet %d on %s\n",
                                 turn, player.getName(), bet, pick);
+                        // Bug 05 fixation 
+						  // random values appears on each turn 
 
-                    
-                    if (winnings > 0) {
-	                    System.out.printf("%s won %d, balance now %d\n\n",
-	                    		player.getName(), winnings, player.getBalance());
-	                	winCount++; 
-                    }
-                    else {
-	                    System.out.printf("%s lost, balance now %d\n\n",
-	                    		player.getName(), player.getBalance());
-	                	loseCount++;
+					  int winnings = game.playRound(player, pick, bet);
+                        cdv = game.getDiceValues();
+
+                        System.out.printf("Rolled %s, %s, %s\n",
+                                cdv.get(0), cdv.get(1), cdv.get(2));
+
+                        if (winnings > 0) {
+                            System.out.printf("%s won %d, balance now %d\n\n",
+                                    player.getName(), winnings, player.getBalance());
+                            winCount++;
+                        }
+                        else {
+                            System.out.printf("%s lost, balance now %d\n\n",
+                                    player.getName(), player.getBalance());
+                            loseCount++;
+                        }
+                    }else {
+                        System.out.println("Roled over as No Spin/Throw all wagers shall be void on that spin/throw");
                     }
                     
                 } //while
