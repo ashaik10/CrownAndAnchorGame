@@ -56,14 +56,13 @@ public class Main {
                     if(checkNoSpinThrow(cdv)){
                         turn++;
                         DiceValue pick = DiceValue.getRandom();
-                	System.out.printf("Turn %d: %s bet %d on %s\n",
-                			turn, player.getName(), bet, pick); 
-                	
-                	int winnings = game.playRound(player, pick, bet);
-                    cdv = game.getDiceValues();
-                    
-                    System.out.printf("Rolled %s, %s, %s\n",
-                    		cdv.get(0), cdv.get(1), cdv.get(2));
+                	// Bug 04 fixation 
+					  // minium and max values 
+                        System.out.println("Mimimum wage is $5");
+                        System.out.println("Mimimum wage is $200");
+                        System.out.printf("Turn %d: %s bet %d on %s\n",
+                                turn, player.getName(), bet, pick);
+
                     
                     if (winnings > 0) {
 	                    System.out.printf("%s won %d, balance now %d\n\n",
